@@ -29,6 +29,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	nasm
 %endif
 BuildRequires:	zlib-devel
+Provides:	freeamp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	freeamp
 
