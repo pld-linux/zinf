@@ -1,7 +1,6 @@
-diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
---- zinf-2.2.1.org/configure.in	Mon Dec 16 21:19:02 2002
-+++ zinf-2.2.1/configure.in	Mon Dec 16 21:19:38 2002
-@@ -57,10 +57,9 @@
+--- zinf-2.2.3/configure.in.orig	2003-01-19 18:04:10.000000000 +0100
++++ zinf-2.2.3/configure.in	2003-07-21 08:22:18.000000000 +0200
+@@ -64,13 +64,12 @@
  AC_STDC_HEADERS
  AC_HAVE_HEADERS(unistd.h io.h pthread.h errno.h)
  
@@ -12,9 +11,24 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
 -AC_LANG_RESTORE
 +AC_LANG_POP
  
- AC_CHECK_LIB(socket, connect, [EXTRALIBS="$EXTRALIBS -lsocket"])
- AC_CHECK_LIB(nsl, gethostbyname, [EXTRALIBS="$EXTRALIBS -lnsl"])
-@@ -242,8 +241,7 @@
+-AC_CHECK_LIB(socket, connect, [EXTRALIBS="$EXTRALIBS -lsocket"])
+-AC_CHECK_LIB(nsl, gethostbyname, [EXTRALIBS="$EXTRALIBS -lnsl"])
++AC_CHECK_FUNC(connect, , [AC_CHECK_LIB(socket, connect, [EXTRALIBS="$EXTRALIBS -lsocket"])])
++AC_CHECK_FUNC(gethostbyname, , [AC_CHECK_LIB(nsl, gethostbyname, [EXTRALIBS="$EXTRALIBS -lnsl"])])
+ 
+ dnl Checks for gdbm
+ 
+@@ -126,8 +126,7 @@
+   ], [
+     AC_MSG_CHECKING($3 AC_PROTOTYPE_STATUS(tags))
+     ac_save_CPPFLAGS="$CPPFLAGS"
+-    ifelse(AC_LANG,CPLUSPLUS,if test "$GXX" = "yes" ; then CPPFLAGS="$CPPFLAGS -Werror" ; fi)
+-    ifelse(AC_LANG,C,if test "$GCC" = "yes" ; then CPPFLAGS="$CPPFLAGS -Werror" ; fi)
++    CPPFLAGS="$CPPFLAGS -Werror"
+     AC_TRY_COMPILE($2, $1, [
+       CPPFLAGS="$ac_save_CPPFLAGS"
+       AC_MSG_RESULT(ok)
+@@ -254,8 +253,7 @@
  fi
  
  if test "$isunix" = "true" ; then
@@ -24,7 +38,7 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
      AC_MSG_CHECKING(for G++ >= 2.91)
      AC_TRY_RUN([
  int main() {
-@@ -268,7 +266,7 @@
+@@ -280,7 +278,7 @@
          echo "Re-run this configure script after you have a newer version."
          exit 1
      fi
@@ -33,7 +47,7 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
  fi
   
  AC_SUBST(OSTYPE)
-@@ -311,8 +309,7 @@
+@@ -323,8 +321,7 @@
       ESD_LIBS=""
       have_esound="false"
    else
@@ -43,7 +57,7 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
       ESD_CFLAGS=`$ESD_CONFIG --cflags`
       ESD_LIBS=`$ESD_CONFIG --libs`
       min_esd_version=0.2.12
-@@ -385,7 +382,7 @@
+@@ -397,7 +394,7 @@
  ],, have_esound=false, have_esound=false)
       CFLAGS="$ac_save_CFLAGS"
       LIBS="$ac_save_LIBS"
@@ -52,17 +66,49 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
       rm -f conf.esdtest
    fi
  
-@@ -411,8 +408,7 @@
+@@ -417,6 +417,7 @@
+ AC_SUBST(ESD_LIBS)
+ 
+ dnl Check to use external id3lib.
++AC_LANG_PUSH(C++)
+ ID3LIB_LIBS=""
+ AC_CHECK_HEADER(id3/tag.h, [have_id3lib="true"], [have_id3lib="false"])
+ if test "$have_id3lib" = "true" ; then 
+@@ -427,6 +428,7 @@
+    echo "id3.sourceforge.net and install"       
+ fi
+ AC_SUBST(ID3LIB_LIBS)
++AC_LANG_POP
+ 
+ dnl Check for Internation stuff.
+ AC_ALLOCA
+@@ -439,13 +436,12 @@
+ 
+ 
+ dnl Check for the boost format library (used sparingly).
+-dnl AC_LANG_SAVE
+-dnl AC_LANG_CPLUSPLUS
++dnl AC_LANG_PUSH(C++)
+ dnl AC_CHECK_HEADER(boost/format.hpp,[have_boost="true"],[have_boost="false"])
+ dnl if  test "$have_boost" == "false" ; then
+ dnl  AC_MSG_ERROR([Please install the boost format library http://www.boost.org])
+ dnl fi
+-dnl AC_LANG_RESTORE
++dnl AC_LANG_POP
+    
+ 
+ 
+@@ -453,8 +449,7 @@
  dnl optional freetype support..
  save_CPPFLAGS="$CPPFLAGS"
- CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ CPPFLAGS="$CPPFLAGS"
 -AC_LANG_SAVE
 -AC_LANG_C
 +AC_LANG_PUSH(C)
  AC_CHECK_HEADERS(freetype.h, have_freetype="true", have_freetype="false")
  
  if test "$have_freetype" = "false"; then
-@@ -423,7 +419,7 @@
+@@ -465,7 +460,7 @@
                      have_freetype="false")
  fi
  CPPFLAGS="$save_CPPFLAGS"
@@ -71,7 +117,7 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
  
  TTF_LIBS=""
  if test "$have_freetype" = "true"; then
-@@ -537,11 +533,10 @@
+@@ -579,11 +574,10 @@
  save_CPPFLAGS="$CPPFLAGS"
  ORBIT_CPP_CFLAGS=`orbit-config --cflags server`
  CPPFLAGS="$CPPFLAGS $GTK_CFLAGS $ORBIT_CPP_CFLAGS" 
@@ -85,7 +131,7 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
  
  ORBIT_LIBS=""
  ORBIT_IDL=""
-@@ -656,8 +651,7 @@
+@@ -712,8 +706,7 @@
    ac_save_LIBS="$LIBS"
  
    LIBS="$LIBS -lasound"
@@ -93,9 +139,9 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
 -  AC_LANG_C
 +  AC_LANG_PUSH(C)
    AC_TRY_RUN([
- #include <sys/asoundlib.h>
+ #include <alsa/asoundlib.h>
  void main(void)
-@@ -696,7 +690,7 @@
+@@ -752,7 +745,7 @@
  }
  ], , have_alsa=false, have_alsa=false
  )
@@ -104,7 +150,7 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
     CFLAGS="$ac_save_CFLAGS"
     LIBS="$ac_save_LIBS"
     if test "$have_alsa" = "false"; then
-@@ -931,8 +925,7 @@
+@@ -987,8 +980,7 @@
  CFLAGS="$CFLAGS $GDK_PIXBUF_CFLAGS"
  AC_SUBST(CFLAGS)
  
@@ -113,13 +159,16 @@ diff -urN zinf-2.2.1.org/configure.in zinf-2.2.1/configure.in
 +AC_LANG_PUSH(C++)
  AC_CHECK_LIB(musicbrainz, mb_GetVersion, ,
    [ echo "***"
-     echo "*** FreeAmp requires the MusicBrainz client library version 1.0.1."
-@@ -940,7 +933,7 @@
+     echo "*** Zinf requires the MusicBrainz client library version 1.0.1."
+@@ -996,9 +988,8 @@
      echo "***     http://www.musicbrainz.org/download.html"
      echo "***"
-   AC_MSG_ERROR(Cannot continue.)],-ldl -lm -lstdc++)
+     AC_MSG_ERROR(Cannot continue.)],-ldl -lm -lstdc++)
 -AC_LANG_RESTORE
 +AC_LANG_POP
  
  AC_CONFIG_HEADER(config/config.h)
- AC_OUTPUT(Makefile Makefile-plugins Makefile.header Makefile.towav)
+-AC_OUTPUT([Makefile Makefile-plugins Makefile.header Makefile.towav po/Makefile.in  po/Makefile.in],
+-[sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
++AC_OUTPUT([Makefile Makefile-plugins Makefile.header Makefile.towav po/Makefile.in])
+ touch .config.check

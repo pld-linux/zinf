@@ -1,20 +1,23 @@
+#
+# Conditional build:
+# _without_arts:	- without arts sound support
+#
 Summary:	MP3 audio player with theme user interface and streaming support
 Summary(pl):	Odtwarzacz plików MP3 z obs³ug± motywów i streamingu
 Name:		zinf
-Version:	2.2.1
+Version:	2.2.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/zinf/%{name}-%{version}.tar.gz
-# Source0-md5:	62d603f89341a0e788451498138b962e
+# Source0-md5:	2eda6103c0287c7d4d591841e4898199
 Source1:	%{name}.desktop
 Patch0:		%{name}-ncurses_include.patch
-Patch1:		%{name}-make.patch
-Patch2:		%{name}-ac.patch
-Patch3:		%{name}-DESTDIR.patch
+Patch1:		%{name}-ac.patch
+Patch2:		%{name}-DESTDIR.patch
 URL:		http://www.zinf.org/
 BuildRequires:	ORBit-devel
-BuildRequires:	arts-devel
+%{!?_without_arts:BuildRequires:	arts-devel}
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.12
@@ -22,18 +25,18 @@ BuildRequires:	freetype1-devel
 BuildRequires:	gdk-pixbuf-devel >= 0.8.0
 BuildRequires:	gtk+-devel >= 1.2.5
 BuildRequires:	id3lib-devel
+BuildRequires:	libmusicbrainz-devel >= 1.1.0
 BuildRequires:	libogg-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
-BuildRequires:	musicbrainz-devel >= 1.1.0
-BuildRequires:	ncurses-devel
 %ifarch %{ix86}
 BuildRequires:	nasm
 %endif
+BuildRequires:	ncurses-devel
 BuildRequires:	zlib-devel
 Provides:	freeamp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	freeamp
-
 
 %description
 Zinf is an extensible, cross-platform audio player. It features an
@@ -58,15 +61,15 @@ Ten program wcze¶niej by³ znany pod nazw± FreeAmp.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
-cp -f /usr/share/automake/config.* config/
+cp -f /usr/share/automake/config.* config
 %{__aclocal}
 %{__autoconf}
+CPPFLAGS="-Wno-char-subscripts"
 %configure \
 	--disable-alsa \
-	--enable-arts \
+	%{?_without_arts:--disable-arts} \
 	--enable-esd \
 	--enable-cmdline \
 %ifnarch %{ix86}
