@@ -27,7 +27,7 @@ BuildRequires:	boost-devel >= 1.31.0
 BuildRequires:	boost-filesystem-devel >= 1.31.0
 BuildRequires:	esound-devel >= 0.2.12
 BuildRequires:	gdbm-devel
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	gettext-devel >= 0.13.1
 BuildRequires:	id3lib-devel
 BuildRequires:	libmusicbrainz-devel >= 2.0.1
