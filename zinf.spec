@@ -1,5 +1,5 @@
 Summary:	MP3 audio player with theme user interface and streaming support
-Summary(pl):	Odtwarzacz plików MP3 z obs³ug± tematów i streamingu
+Summary(pl):	Odtwarzacz plików MP3 z obs³ug± motywów i streamingu
 Name:		zinf
 Version:	2.2.1
 Release:	1
