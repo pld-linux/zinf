@@ -68,11 +68,13 @@ Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description lmc-vorbis
-Ogg/Vorbis sound Logical Media Converter plugin for ZINF.
+Ogg/Vorbis sound Logical Media Converter plugin for ZINF. This package
+contains also Ogg/Vorbis MetaData Format plugin.
 
 %description lmc-vorbis
 Wtyczka konwertera mediów (Logical Media Converter) ZINF obs³uguj±ca
-d¼wiêk Ogg/Vorbis.
+d¼wiêk Ogg/Vorbis. Pakiet zawiera dodatkowo wtyczkê formatu metadanych
+(MetaData Format) ZINF obs³uguj±c± metadane z plików Ogg/Vorbis.
 
 %package mdf-mbcd
 Summary:	MusicBrainz MetaData Format plugin for ZINF
@@ -218,7 +220,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/%{name}/plugins/xingmp3.lmc
 %attr(755,root,root) %{_libdir}/%{name}/plugins/id3lib.mdf
 %attr(755,root,root) %{_libdir}/%{name}/plugins/misc.mdf
-%attr(755,root,root) %{_libdir}/%{name}/plugins/vorbis.mdf
 %attr(755,root,root) %{_libdir}/%{name}/plugins/*.plf
 %attr(755,root,root) %{_libdir}/%{name}/plugins/*.pmi
 %attr(755,root,root) %{_libdir}/%{name}/plugins/cd.pmo
@@ -236,6 +237,7 @@ rm -rf $RPM_BUILD_ROOT
 %files lmc-vorbis
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/plugins/vorbis.lmc
+%attr(755,root,root) %{_libdir}/%{name}/plugins/vorbis.mdf
 
 %files mdf-mbcd
 %defattr(644,root,root,755)
