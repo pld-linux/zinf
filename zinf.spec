@@ -5,7 +5,7 @@ Version:	2.2.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/zinf/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/zinf/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-ncurses_include.patch
 Patch1:		%{name}-make.patch
@@ -62,7 +62,7 @@ Ten program wcze¶niej by³ znany pod nazw± FreeAmp.
 %build
 cp -f /usr/share/automake/config.* config/
 %{__aclocal}
-autoconf
+%{__autoconf}
 %configure \
 	--disable-alsa \
 	--enable-arts \
