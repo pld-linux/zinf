@@ -7,8 +7,8 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/zinf/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
-Patch0:		freeamp-ncurses_include.patch
-Patch1:		freeamp-make.patch
+Patch0:		%{name}-ncurses_include.patch
+Patch1:		%{name}-make.patch
 Patch2:		%{name}-ac.patch
 Patch3:		%{name}-DESTDIR.patch
 URL:		http://www.zinf.org/
