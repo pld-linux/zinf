@@ -6,7 +6,7 @@ diff -urN aa/zinf-2.2.5/configure.ac zinf-2.2.5/configure.ac
  AC_LANG_PUSH([C++])
  AC_CHECK_HEADERS([boost/filesystem/path.hpp],
 -                 [BOOST_LIBS=-lboost_filesystem],
-+                 [BOOST_LIBS=-lboost_filesystem-gcc-mt-1_31],
++                 [BOOST_LIBS=-lboost_filesystem-gcc-mt-1_32],
                   [])
  AC_LANG_POP([C++])
  AC_SUBST(BOOST_LIBS)
