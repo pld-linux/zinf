@@ -1,0 +1,134 @@
+--- zinf-2.2.0.orig/configure.in	Mon Jun 24 01:44:27 2002
++++ zinf-2.2.0/configure.in	Wed Jul  3 10:58:36 2002
+@@ -57,10 +57,9 @@
+ AC_STDC_HEADERS
+ AC_HAVE_HEADERS(unistd.h io.h pthread.h errno.h)
+ 
+-AC_LANG_SAVE
+-AC_LANG_CPLUSPLUS
++AC_LANG_PUSH(C++)
+ AC_HAVE_HEADERS(sstream)
+-AC_LANG_RESTORE
++AC_LANG_POP
+ 
+ AC_CHECK_LIB(socket, connect, [EXTRALIBS="$EXTRALIBS -lsocket"])
+ AC_CHECK_LIB(nsl, gethostbyname, [EXTRALIBS="$EXTRALIBS -lnsl"])
+@@ -117,8 +116,7 @@
+   ], [
+     AC_MSG_CHECKING($3 AC_PROTOTYPE_STATUS(tags))
+     ac_save_CPPFLAGS="$CPPFLAGS"
+-    ifelse(AC_LANG,CPLUSPLUS,if test "$GXX" = "yes" ; then CPPFLAGS="$CPPFLAGS -Werror" ; fi)
+-    ifelse(AC_LANG,C,if test "$GCC" = "yes" ; then CPPFLAGS="$CPPFLAGS -Werror" ; fi)
++    CPPFLAGS="$CPPFLAGS -Werror"
+     AC_TRY_COMPILE($2, $1, [
+       CPPFLAGS="$ac_save_CPPFLAGS"
+       AC_MSG_RESULT(ok)
+@@ -244,8 +242,7 @@
+ fi
+ 
+ if test "$isunix" = "true" ; then
+-    AC_LANG_SAVE
+-    AC_LANG_C dnl PLUSPLUS
++    AC_LANG_PUSH(C) dnl PLUSPLUS
+     AC_MSG_CHECKING(for G++ >= 2.91)
+     AC_TRY_RUN([
+ int main() {
+@@ -270,7 +267,7 @@
+         echo "Re-run this configure script after you have a newer version."
+         exit 1
+     fi
+-    AC_LANG_RESTORE
++    AC_LANG_POP
+ fi
+  
+ AC_SUBST(OSTYPE)
+@@ -313,8 +310,7 @@
+      ESD_LIBS=""
+      have_esound="false"
+   else
+-     AC_LANG_SAVE
+-     AC_LANG_C
++     AC_LANG_PUSH(C)
+      ESD_CFLAGS=`$ESD_CONFIG --cflags`
+      ESD_LIBS=`$ESD_CONFIG --libs`
+      min_esd_version=0.2.12
+@@ -387,7 +383,7 @@
+ ],, have_esound=false, have_esound=false)
+      CFLAGS="$ac_save_CFLAGS"
+      LIBS="$ac_save_LIBS"
+-     AC_LANG_RESTORE
++     AC_LANG_POP
+      rm -f conf.esdtest
+   fi
+ 
+@@ -413,8 +409,7 @@
+ dnl optional freetype support..
+ save_CPPFLAGS="$CPPFLAGS"
+ CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+-AC_LANG_SAVE
+-AC_LANG_C
++AC_LANG_PUSH(C)
+ AC_CHECK_HEADERS(freetype.h, have_freetype="true", have_freetype="false")
+ 
+ if test "$have_freetype" = "false"; then
+@@ -422,7 +417,7 @@
+                     have_freetype="false")
+ fi
+ CPPFLAGS="$save_CPPFLAGS"
+-AC_LANG_RESTORE
++AC_LANG_POP
+ 
+ TTF_LIBS=""
+ if test "$have_freetype" = "true"; then
+@@ -536,11 +531,10 @@
+ save_CPPFLAGS="$CPPFLAGS"
+ ORBIT_CPP_CFLAGS=`orbit-config --cflags server`
+ CPPFLAGS="$CPPFLAGS $GTK_CFLAGS $ORBIT_CPP_CFLAGS" 
+-AC_LANG_SAVE
+-AC_LANG_C
++AC_LANG_PUSH(C)
+ AC_CHECK_HEADERS(orb/orbit.h, have_orbit="true", have_orbit="false")
+ CPPFLAGS="$save_CPPFLAGS"
+-AC_LANG_RESTORE
++AC_LANG_POP
+ 
+ ORBIT_LIBS=""
+ ORBIT_IDL=""
+@@ -655,8 +649,7 @@
+   ac_save_LIBS="$LIBS"
+ 
+   LIBS="$LIBS -lasound"
+-  AC_LANG_SAVE
+-  AC_LANG_C
++  AC_LANG_PUSH(C)
+   AC_TRY_RUN([
+ #include <sys/asoundlib.h>
+ void main(void)
+@@ -695,7 +688,7 @@
+ }
+ ], , have_alsa=false, have_alsa=false
+ )
+-   AC_LANG_RESTORE
++   AC_LANG_POP
+    CFLAGS="$ac_save_CFLAGS"
+    LIBS="$ac_save_LIBS"
+    if test "$have_alsa" = "false"; then
+@@ -930,8 +923,7 @@
+ CFLAGS="$CFLAGS $GDK_PIXBUF_CFLAGS"
+ AC_SUBST(CFLAGS)
+ 
+-AC_LANG_SAVE
+-AC_LANG_CPLUSPLUS
++AC_LANG_PUSH(C++)
+ AC_CHECK_LIB(musicbrainz, mb_GetVersion, ,
+   [ echo "***"
+     echo "*** FreeAmp requires the MusicBrainz client library version 1.0.1."
+@@ -939,7 +931,7 @@
+     echo "***     http://www.musicbrainz.org/download.html"
+     echo "***"
+   AC_MSG_ERROR(Cannot continue.)],-ldl -lm -lstdc++)
+-AC_LANG_RESTORE
++AC_LANG_POP
+ 
+ AC_CONFIG_HEADER(config/config.h)
+ AC_OUTPUT(Makefile Makefile-plugins Makefile.header Makefile.towav)
