@@ -11,3 +11,20 @@
  
  dnl Threads
  if test "$host_os" = "beos"; then
+--- zinf-2.2.5/m4/pthread.m4.orig	2003-09-16 19:35:17.000000000 +0200
++++ zinf-2.2.5/m4/pthread.m4	2004-02-08 11:42:30.442073416 +0100
+@@ -126,12 +126,13 @@
+ 
+ 
+ dnl Check for SunOS thread library style 	
++AC_CHECK_FUNC(sched_get_priority_max,,[
+ AC_CHECK_LIB(rt, sched_get_priority_max, 
+ [
+  AC_DEFINE(HAVE_SCHED_RT,,[Defined if -lrt is needed for RT scheduling])
+  LIBS="$LIBS -lrt"
+ ]
+-)
++)])
+ 
+ PTHREAD_LIBS="$LIBS"
+ 
