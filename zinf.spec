@@ -63,7 +63,7 @@ Ten program wczesniej by³ znany pod nazw± FreeAmp.
 
 %build
 cp -f /usr/share/automake/config.* config/
-aclocal
+%{__aclocal}
 autoconf
 %configure \
 	--disable-alsa \
