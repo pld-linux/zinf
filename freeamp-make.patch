@@ -1,0 +1,10 @@
+diff -urN freeamp.org/Makefile.header.in freeamp/Makefile.header.in
+--- freeamp.org/Makefile.header.in	Fri Mar  2 21:03:16 2001
++++ freeamp/Makefile.header.in	Fri Mar  2 21:10:57 2001
+@@ -122,5 +122,5 @@
+ 
+ @SET_MAKE@
+ 
+-PIMAKE = $(MAKE) -f Makefile-plugins -$(MAKEFLAGS)
++PIMAKE = $(MAKE) -f Makefile-plugins $(MAKEFLAGS)
+ 
