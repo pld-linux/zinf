@@ -40,7 +40,7 @@ BuildRequires:	metakit-devel
 BuildRequires:	nasm
 %endif
 BuildRequires:	ncurses-devel
-BuildRequires;	pkgconfig
+BuildRequires:	pkgconfig
 BuildRequires:	xosd-devel
 BuildRequires:	zlib-devel
 Provides:	freeamp
