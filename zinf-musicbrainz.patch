@@ -1,0 +1,22 @@
+diff -urN aa/zinf-2.2.5/ui/musicbrowser/unix/src/musicbrowser.cpp zinf-2.2.5/ui/musicbrowser/unix/src/musicbrowser.cpp
+--- aa/zinf-2.2.5/ui/musicbrowser/unix/src/musicbrowser.cpp	2003-09-16 19:35:29.000000000 +0200
++++ zinf-2.2.5/ui/musicbrowser/unix/src/musicbrowser.cpp	2004-04-05 01:47:48.697767448 +0200
+@@ -21,7 +21,6 @@
+     $Id$
+ ____________________________________________________________________________*/
+ #include <algorithm>
+-#include <musicbrainz/bitzi/bitcollider.h>
+ #include <string>
+ #include <vector>
+ 
+diff -urN aa/zinf-2.2.5/ui/musicbrowsermm/unix/src/musicbrowser.cpp zinf-2.2.5/ui/musicbrowsermm/unix/src/musicbrowser.cpp
+--- aa/zinf-2.2.5/ui/musicbrowsermm/unix/src/musicbrowser.cpp	2003-09-16 19:35:31.000000000 +0200
++++ zinf-2.2.5/ui/musicbrowsermm/unix/src/musicbrowser.cpp	2004-04-05 01:47:42.814661816 +0200
+@@ -21,7 +21,6 @@
+     $Id$
+ ____________________________________________________________________________*/
+ #include <algorithm>
+-#include <musicbrainz/bitzi/bitcollider.h>
+ #include <string>
+ #include <vector>
+ #include <iostream>
