@@ -18,7 +18,7 @@ Patch1:		%{name}-ac.patch
 #Patch2:		%{name}-DESTDIR.patch
 URL:		http://www.zinf.org/
 BuildRequires:	ORBit-devel
-%{!?_without_arts:BuildRequires:	arts-devel}
+%{!?_without_arts:BuildRequires:	artsc-devel}
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.12
