@@ -7,7 +7,7 @@ Summary:	MP3 audio player with theme user interface and streaming support
 Summary(pl):	Odtwarzacz plików MP3 z obs³ug± motywów i streamingu
 Name:		zinf
 Version:	2.2.5
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/zinf/%{name}-%{version}.tar.gz
@@ -191,7 +191,9 @@ CPPFLAGS="-I/usr/include/ncurses"
 	%{!?with_arts:--disable-arts} \
 	--enable-corba \
 	--enable-esd \
+%ifarch %{ix86}
 	--enable-rio \
+%endif
 %ifnarch %{ix86}
 	--disable-x86opts \
 %endif
