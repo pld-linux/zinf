@@ -232,7 +232,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/%{name}/plugins/cd.pmo
 %attr(755,root,root) %{_libdir}/%{name}/plugins/soundcard.pmo
 %attr(755,root,root) %{_libdir}/%{name}/plugins/wavout.pmo
+%ifarch %{ix86}
 %attr(755,root,root) %{_libdir}/%{name}/plugins/*.ppp
+%endif
 %attr(755,root,root) %{_libdir}/%{name}/plugins/cmdline.ui
 %attr(755,root,root) %{_libdir}/%{name}/plugins/irman.ui
 %attr(755,root,root) %{_libdir}/%{name}/plugins/lcd.ui
