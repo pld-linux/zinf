@@ -28,3 +28,28 @@
  
  PTHREAD_LIBS="$LIBS"
  
+--- zinf-2.2.5/base/Makefile.am.orig	2004-02-02 18:40:49.000000000 +0100
++++ zinf-2.2.5/base/Makefile.am	2004-02-08 17:11:39.747722600 +0100
+@@ -22,9 +22,10 @@
+ 
+ 
+ zinf_LDADD = $(top_builddir)/io/libio.la unix/libunix.la \
+-			 $(top_builddir)/mdb/libmdb.a \
+ 	         -lmk4 $(GDBM_LIBS) $(THREAD_LIBS)  $(BOOST_LIBS) -ldl
+-zinf_LDFLAGS = -export-dynamic
++# musicdb.o from libmdb.a is needed by plugins, but not binary itself
++# place libmdb.a in -Wl, so libtool won't reorder it outside --whole-archive
++zinf_LDFLAGS = -export-dynamic -Wl,--whole-archive -Wl,$(top_builddir)/mdb/libmdb.a -Wl,--no-whole-archive
+ 
+ noinst_HEADERS = $(inc_headers)
+ 
+--- zinf-2.2.5/plm/metadata/vorbis/Makefile.am.orig	2003-09-16 19:35:19.000000000 +0200
++++ zinf-2.2.5/plm/metadata/vorbis/Makefile.am	2004-02-08 17:13:27.770300672 +0100
+@@ -3,6 +3,7 @@
+ plugin_LTLIBRARIES = vorbis-mdf.la
+ 
+ vorbis_mdf_la_SOURCES = vorbis.cpp vcedit.c vcedit.h vorbis.h i18n.h
++vorbis_mdf_la_LIBADD = $(VORBIS_LIBS) $(VORBISFILE_LIBS)
+ vorbis_mdf_la_LDFLAGS = $(plugin_ldflags) $(top_builddir)/lib/utf8/libutf8.la
+ 
+ AM_CPPFLAGS = $(THREAD_CFLAGS) $(base_includes)
