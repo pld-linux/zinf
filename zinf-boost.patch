@@ -1,0 +1,12 @@
+diff -urN aa/zinf-2.2.5/configure.ac zinf-2.2.5/configure.ac
+--- aa/zinf-2.2.5/configure.ac	2004-02-02 19:31:16.000000000 +0100
++++ zinf-2.2.5/configure.ac	2004-04-05 01:21:11.683550512 +0200
+@@ -203,7 +203,7 @@
+ dnl BOOST libraries available
+ AC_LANG_PUSH([C++])
+ AC_CHECK_HEADERS([boost/filesystem/path.hpp],
+-                 [BOOST_LIBS=-lboost_filesystem],
++                 [BOOST_LIBS=-lboost_filesystem-gcc-1_31],
+                  [])
+ AC_LANG_POP([C++])
+ AC_SUBST(BOOST_LIBS)
