@@ -2,7 +2,7 @@ Summary:	MP3 audio player with theme user interface and streaming support
 Summary(pl):	Odtwarzacz plików MP3 z obs³ug± tematów i streamingu
 Name:		zinf
 Version:	2.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/zinf/%{name}-%{version}.tar.gz
@@ -30,6 +30,7 @@ BuildRequires:	nasm
 %endif
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	freeamp
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
