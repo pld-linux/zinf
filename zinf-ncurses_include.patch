@@ -1,0 +1,13 @@
+Binary files freeamp.orig/MakeTheme and freeamp/MakeTheme differ
+diff -Nru freeamp.orig/ui/ncurses/ncursesUI.h freeamp/ui/ncurses/ncursesUI.h
+--- freeamp.orig/ui/ncurses/ncursesUI.h	Sat Jun  3 03:54:27 2000
++++ freeamp/ui/ncurses/ncursesUI.h	Sat Jun  3 03:52:09 2000
+@@ -35,7 +35,7 @@
+ #include "eventdata.h"
+ 
+ /* ncurses / curses include */
+-#include <curses.h>
++#include <ncurses/curses.h>
+ #ifndef NCURSES_VERSION
+ #define color_set(a,b) ;
+ #endif
