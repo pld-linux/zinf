@@ -15,13 +15,16 @@ Source0:	http://dl.sourceforge.net/zinf/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-ac.patch
+Patch1:		%{name}-boost.patch
+Patch2:		%{name}-musicbrainz.patch
 URL:		http://www.zinf.org/
 BuildRequires:	ORBit-devel >= 0.5.0
 %{?with_alsa:BuildRequires:	alsa-lib-devel >= 0.9.0}
 %{?with_arts:BuildRequires:	artsc-devel}
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	boost-devel
+BuildRequires:	boost-devel >= 1.31.0
+BuildRequires:	boost-filesystem-devel >= 1.31.0
 BuildRequires:	esound-devel >= 0.2.12
 BuildRequires:	gdbm-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
@@ -172,6 +175,8 @@ Wtyczka interfejsu u¿ytkownika (User Interface) ZINF oparta na XOSD.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__gettextize}
