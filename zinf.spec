@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/zinf/%{name}-%{version}.tar.gz
+# Source0-md5:	62d603f89341a0e788451498138b962e
 Source1:	%{name}.desktop
 Patch0:		%{name}-ncurses_include.patch
 Patch1:		%{name}-make.patch
