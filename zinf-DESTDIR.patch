@@ -1,0 +1,28 @@
+--- zinf-2.2.0.orig/Makefile.in	Mon Jun 24 01:44:27 2002
++++ zinf-2.2.0/Makefile.in	Wed Jul  3 12:26:27 2002
+@@ -142,10 +142,10 @@
+ install-zinf: zinf
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	$(INSTALL_PROGRAM) zinf $(DESTDIR)$(bindir)
+-	$(mkinstalldirs) /usr/share/pixmaps
+-	$(INSTALL_DATA) installer/unix/linux/zinf.png $(GTK_PREFIX)/share/pixmaps
+-	$(mkinstalldirs) /usr/share/gnome/apps/Audio
+-	$(INSTALL_DATA) installer/unix/linux/Zinf.desktop $(GTK_PREFIX)/share/gnome/apps/Audio
++	$(mkinstalldirs) $(DESTDIR)$(GTK_PREFIX)/share/pixmaps
++	$(INSTALL_DATA) installer/unix/linux/zinf.png $(DESTDIR)$(GTK_PREFIX)/share/pixmaps
++	$(mkinstalldirs) $(DESTDIR)$(GTK_PREFIX)/share/gnome/apps/Audio
++	$(INSTALL_DATA) installer/unix/linux/Zinf.desktop $(DESTDIR)$(GTK_PREFIX)/share/gnome/apps/Audio
+ 	if test -f "MakeTheme"; then \
+ 		$(INSTALL_PROGRAM) MakeTheme $(DESTDIR)$(bindir);\
+ 	fi;
+@@ -153,8 +153,8 @@
+ uninstall-zinf:
+ 	-${RM} $(DESTDIR)$(bindir)/zinf
+ 	-${RM} $(DESTDIR)$(bindir)/MakeTheme
+-	-${RM} $(GTK_PREFIX)/share/pixmaps/zinf.png
+-	-${RM} $(GTK_PREFIX)/share/gnome/apps/Audio/Zinf.desktop
++	-${RM} $(DESTDIR)$(GTK_PREFIX)/share/pixmaps/zinf.png
++	-${RM} $(DESTDIR)$(GTK_PREFIX)/share/gnome/apps/Audio/Zinf.desktop
+ 
+ install-themes:
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/zinf/themes
