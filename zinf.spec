@@ -37,8 +37,8 @@ BuildRequires:	nasm
 BuildRequires:	ncurses-devel
 BuildRequires:	zlib-devel
 Provides:	freeamp
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	freeamp
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Zinf is an extensible, cross-platform audio player. It features an
