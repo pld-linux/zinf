@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Zinf
 Comment=Zinf audio player
+Comment[pl]=Odtwarzacz dźwięku Zinf
 Icon=zinf.png
 Exec=zinf -ui zinf.ui
 Terminal=0
