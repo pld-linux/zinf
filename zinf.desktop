@@ -7,4 +7,5 @@ Exec=zinf -ui zinf.ui
 Terminal=false
 Type=Application
 Encoding=UTF-8
+Categories=AudioVideo;Player;
 # vi: encoding=utf-8
