@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_arts:	- without arts sound support
+%bcond_without  arts	# without arts sound support
 #
 Summary:	MP3 audio player with theme user interface and streaming support
 Summary(pl):	Odtwarzacz plików MP3 z obs³ug± motywów i streamingu
@@ -18,7 +18,7 @@ Patch1:		%{name}-ac.patch
 #Patch2:		%{name}-DESTDIR.patch
 URL:		http://www.zinf.org/
 BuildRequires:	ORBit-devel
-%{!?_without_arts:BuildRequires:	artsc-devel}
+%{?with_arts:BuildRequires:	artsc-devel}
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.12
@@ -71,7 +71,7 @@ Ten program wcze¶niej by³ znany pod nazw± FreeAmp.
 %{__automake}
 %configure \
 	--disable-alsa \
-	%{?_without_arts:--disable-arts} \
+	%{!?with_arts:--disable-arts} \
 	--enable-esd \
 	--enable-cmdline \
 %ifnarch %{ix86}
