@@ -52,7 +52,7 @@ freeamp jest jednym z najszybszych i najlepszych odtwarzaczy. Zinf
 daje funkcje, których zwykle u¿ytkownicy oczekuj± od prostego w
 u¿ytkowaniu i jasnego interfejsu.
 
-Ten program wczesniej by³ znany pod nazw± FreeAmp.
+Ten program wcze¶niej by³ znany pod nazw± FreeAmp.
 
 %prep
 %setup -q
