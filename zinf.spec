@@ -33,8 +33,6 @@ Provides:	freeamp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	freeamp
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Zinf is an extensible, cross-platform audio player. It features an
