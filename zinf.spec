@@ -4,7 +4,7 @@ Name:		zinf
 Version:	2.2.1
 Release:	1
 License:	GPL
-Group:		X11/Applications/Multimedia
+Group:		X11/Applications/Sound
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/zinf/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-ncurses_include.patch
