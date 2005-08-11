@@ -1,7 +1,7 @@
 #
 # Conditional build:
-%bcond_without  alsa	# without alsa sound support
-%bcond_without  arts	# without arts sound support
+%bcond_without	alsa	# without alsa sound support
+%bcond_without	arts	# without arts sound support
 #
 Summary:	MP3 audio player with theme user interface and streaming support
 Summary(pl):	Odtwarzacz plików MP3 z obs³ug± motywów i streamingu
