@@ -90,8 +90,8 @@ Requires:	%{name} = %{version}-%{release}
 MusicBrainz MetaData Format plugin for ZINF.
 
 %description mdf-mbcd -l pl
-Wtyczka formatu metadanych (MetaData Format) ZINF obs³uguj±ca
-metadane MusicBrainz.
+Wtyczka formatu metadanych (MetaData Format) ZINF obs³uguj±ca metadane
+MusicBrainz.
 
 %package pmo-alsa
 Summary:	ALSA sound Physical Media Output plugin for ZINF
@@ -190,7 +190,7 @@ rm -f po/stamp-po
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CPPFLAGS="-I/usr/include/ncurses"
+CPPFLAGS="-I%{_includedir}/ncurses"
 %configure \
 	%{!?with_alsa:--disable-alsa} \
 	%{!?with_arts:--disable-arts} \
