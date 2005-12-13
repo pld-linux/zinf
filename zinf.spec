@@ -27,8 +27,8 @@ BuildRequires:	boost-devel >= 1.31.0
 BuildRequires:	boost-filesystem-devel >= 1.31.0
 BuildRequires:	esound-devel >= 0.2.12
 BuildRequires:	gdbm-devel
-BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	gettext-devel >= 0.13.1
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	id3lib-devel
 BuildRequires:	libmusicbrainz-devel >= 2.0.1
 BuildRequires:	libogg-devel >= 2:1.0
@@ -190,7 +190,7 @@ rm -f po/stamp-po
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CPPFLAGS="-I%{_includedir}/ncurses"
+CPPFLAGS="-I/usr/include/ncurses"
 %configure \
 	%{!?with_alsa:--disable-alsa} \
 	%{!?with_arts:--disable-arts} \
