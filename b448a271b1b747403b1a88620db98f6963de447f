@@ -1,0 +1,3 @@
+- release 2
+- added obsoletes freeamp (this is succesor of freeamp)
+  STBR: rebuild with new libvorbis
