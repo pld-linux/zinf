@@ -75,7 +75,7 @@ Requires:	%{name} = %{version}-%{release}
 Ogg/Vorbis sound Logical Media Converter plugin for ZINF. This package
 contains also Ogg/Vorbis MetaData Format plugin.
 
-%description lmc-vorbis
+%description lmc-vorbis -l pl
 Wtyczka konwertera mediów (Logical Media Converter) ZINF obs³uguj±ca
 d¼wiêk Ogg/Vorbis. Pakiet zawiera dodatkowo wtyczkê formatu metadanych
 (MetaData Format) ZINF obs³uguj±c± metadane z plików Ogg/Vorbis.
