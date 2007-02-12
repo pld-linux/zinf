@@ -4,7 +4,7 @@
 %bcond_without	arts	# without arts sound support
 #
 Summary:	MP3 audio player with theme user interface and streaming support
-Summary(pl):	Odtwarzacz plikÛw MP3 z obs≥ug± motywÛw i streamingu
+Summary(pl.UTF-8):   Odtwarzacz plik√≥w MP3 z obs≈ÇugƒÖ motyw√≥w i streamingu
 Name:		zinf
 Version:	2.2.5
 Release:	7
@@ -56,18 +56,18 @@ clean, easy to use interface.
 
 This project was formely known as FreeAmp.
 
-%description -l pl
+%description -l pl.UTF-8
 Zinf jest rozszerzalnym, wieloplatformowym odtwarzaczem audio. Jego
-zalety to zoptymalizowana wersja dekodera Xing MPEG (GPL) dziÍki czemu
+zalety to zoptymalizowana wersja dekodera Xing MPEG (GPL) dziƒôki czemu
 freeamp jest jednym z najszybszych i najlepszych odtwarzaczy. Zinf
-daje funkcje, ktÛrych zwykle uøytkownicy oczekuj± od prostego w
-uøytkowaniu i jasnego interfejsu.
+daje funkcje, kt√≥rych zwykle u≈ºytkownicy oczekujƒÖ od prostego w
+u≈ºytkowaniu i jasnego interfejsu.
 
-Ten program wcze∂niej by≥ znany pod nazw± FreeAmp.
+Ten program wcze≈õniej by≈Ç znany pod nazwƒÖ FreeAmp.
 
 %package lmc-vorbis
 Summary:	Ogg/Vorbis sound Logical Media Converter plugin for ZINF
-Summary(pl):	Wtyczka konwertera mediÛw ZINF obs≥uguj±ca dºwiÍk Ogg/Vorbis
+Summary(pl.UTF-8):   Wtyczka konwertera medi√≥w ZINF obs≈ÇugujƒÖca d≈∫wiƒôk Ogg/Vorbis
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -75,79 +75,79 @@ Requires:	%{name} = %{version}-%{release}
 Ogg/Vorbis sound Logical Media Converter plugin for ZINF. This package
 contains also Ogg/Vorbis MetaData Format plugin.
 
-%description lmc-vorbis -l pl
-Wtyczka konwertera mediÛw (Logical Media Converter) ZINF obs≥uguj±ca
-dºwiÍk Ogg/Vorbis. Pakiet zawiera dodatkowo wtyczkÍ formatu metadanych
-(MetaData Format) ZINF obs≥uguj±c± metadane z plikÛw Ogg/Vorbis.
+%description lmc-vorbis -l pl.UTF-8
+Wtyczka konwertera medi√≥w (Logical Media Converter) ZINF obs≈ÇugujƒÖca
+d≈∫wiƒôk Ogg/Vorbis. Pakiet zawiera dodatkowo wtyczkƒô formatu metadanych
+(MetaData Format) ZINF obs≈ÇugujƒÖcƒÖ metadane z plik√≥w Ogg/Vorbis.
 
 %package mdf-mbcd
 Summary:	MusicBrainz MetaData Format plugin for ZINF
-Summary(pl):	Wtyczka formatu metadanych ZINF obs≥uguj±ca metadane MusicBrainz
+Summary(pl.UTF-8):   Wtyczka formatu metadanych ZINF obs≈ÇugujƒÖca metadane MusicBrainz
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description mdf-mbcd
 MusicBrainz MetaData Format plugin for ZINF.
 
-%description mdf-mbcd -l pl
-Wtyczka formatu metadanych (MetaData Format) ZINF obs≥uguj±ca metadane
+%description mdf-mbcd -l pl.UTF-8
+Wtyczka formatu metadanych (MetaData Format) ZINF obs≈ÇugujƒÖca metadane
 MusicBrainz.
 
 %package pmo-alsa
 Summary:	ALSA sound Physical Media Output plugin for ZINF
-Summary(pl):	Wtyczka wyj∂cia mediÛw ZINF obs≥uguj±ca wyj∂cie dºwiÍku ALSA
+Summary(pl.UTF-8):   Wtyczka wyj≈õcia medi√≥w ZINF obs≈ÇugujƒÖca wyj≈õcie d≈∫wiƒôku ALSA
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description pmo-alsa
 ALSA sound Physical Media Output plugin for ZINF.
 
-%description pmo-alsa -l pl
-Wtyczka wyj∂cia mediÛw (Physical Media Output) ZINF obs≥uguj±ca
-wyj∂cie dºwiÍku ALSA.
+%description pmo-alsa -l pl.UTF-8
+Wtyczka wyj≈õcia medi√≥w (Physical Media Output) ZINF obs≈ÇugujƒÖca
+wyj≈õcie d≈∫wiƒôku ALSA.
 
 %package pmo-arts
 Summary:	aRts sound Physical Media Output plugin for ZINF
-Summary(pl):	Wtyczka wyj∂cia mediÛw ZINF obs≥uguj±ca wyj∂cie dºwiÍku aRts
+Summary(pl.UTF-8):   Wtyczka wyj≈õcia medi√≥w ZINF obs≈ÇugujƒÖca wyj≈õcie d≈∫wiƒôku aRts
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description pmo-arts
 aRts sound Physical Media Output plugin for ZINF.
 
-%description pmo-arts -l pl
-Wtyczka wyj∂cia mediÛw (Physical Media Output) ZINF obs≥uguj±ca
-wyj∂cie dºwiÍku aRts.
+%description pmo-arts -l pl.UTF-8
+Wtyczka wyj≈õcia medi√≥w (Physical Media Output) ZINF obs≈ÇugujƒÖca
+wyj≈õcie d≈∫wiƒôku aRts.
 
 %package pmo-esound
 Summary:	EsounD sound Physical Media Output plugin for ZINF
-Summary(pl):	Wtyczka wyj∂cia mediÛw ZINF obs≥uguj±ca wyj∂cie dºwiÍku EsounD
+Summary(pl.UTF-8):   Wtyczka wyj≈õcia medi√≥w ZINF obs≈ÇugujƒÖca wyj≈õcie d≈∫wiƒôku EsounD
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description pmo-esound
 ALSA sound Physical Media Output plugin for ZINF.
 
-%description pmo-esound -l pl
-Wtyczka wyj∂cia mediÛw (Physical Media Output) ZINF obs≥uguj±ca
-wyj∂cie dºwiÍku EsounD.
+%description pmo-esound -l pl.UTF-8
+Wtyczka wyj≈õcia medi√≥w (Physical Media Output) ZINF obs≈ÇugujƒÖca
+wyj≈õcie d≈∫wiƒôku EsounD.
 
 %package ui-corba
 Summary:	CORBA User Interface plugin for ZINF
-Summary(pl):	Wtyczka interfejsu ZINF obs≥uguj±ca interfejs CORBA
+Summary(pl.UTF-8):   Wtyczka interfejsu ZINF obs≈ÇugujƒÖca interfejs CORBA
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description ui-corba
 CORBA User Interface plugin for ZINF.
 
-%description ui-corba -l pl
-Wtyczka interfejsu uøytkownika (User Interface) ZINF obs≥uguj±ca
+%description ui-corba -l pl.UTF-8
+Wtyczka interfejsu u≈ºytkownika (User Interface) ZINF obs≈ÇugujƒÖca
 interfejs CORBA.
 
 %package ui-gtk
 Summary:	GTK+-based User Interface plugins for ZINF
-Summary(pl):	Wtyczki interfejsu ZINF oparte na GTK+
+Summary(pl.UTF-8):   Wtyczki interfejsu ZINF oparte na GTK+
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -156,22 +156,22 @@ GTK+-based User Interface plugins for ZINF (albumart, download,
 musicbrowser and zinf). It also contains Kjofol and Winamp Theme
 Format plugins.
 
-%description ui-gtk -l pl
-Wtyczki interfejsu uøytkownika (User Interface) ZINF oparte na GTK+
-(albumart, download, musicbrowser oraz zinf). Zawiera takøe wtyczki
-formatu motywÛw (Theme Format) konwertuj±ce motywy Kjofola i Winampa.
+%description ui-gtk -l pl.UTF-8
+Wtyczki interfejsu u≈ºytkownika (User Interface) ZINF oparte na GTK+
+(albumart, download, musicbrowser oraz zinf). Zawiera tak≈ºe wtyczki
+formatu motyw√≥w (Theme Format) konwertujƒÖce motywy Kjofola i Winampa.
 
 %package ui-xosd
 Summary:	XOSD User Interface plugin for ZINF
-Summary(pl):	Wtyczka interfejsu ZINF oparta na XOSD
+Summary(pl.UTF-8):   Wtyczka interfejsu ZINF oparta na XOSD
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
 %description ui-xosd
 XOSD User Interface plugin for ZINF.
 
-%description ui-xosd -l pl
-Wtyczka interfejsu uøytkownika (User Interface) ZINF oparta na XOSD.
+%description ui-xosd -l pl.UTF-8
+Wtyczka interfejsu u≈ºytkownika (User Interface) ZINF oparta na XOSD.
 
 %prep
 %setup -q
