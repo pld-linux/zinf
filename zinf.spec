@@ -4,7 +4,7 @@
 %bcond_without	arts	# without arts sound support
 #
 Summary:	MP3 audio player with theme user interface and streaming support
-Summary(pl.UTF-8):   Odtwarzacz plików MP3 z obsługą motywów i streamingu
+Summary(pl.UTF-8):	Odtwarzacz plików MP3 z obsługą motywów i streamingu
 Name:		zinf
 Version:	2.2.5
 Release:	7
@@ -67,7 +67,7 @@ Ten program wcześniej był znany pod nazwą FreeAmp.
 
 %package lmc-vorbis
 Summary:	Ogg/Vorbis sound Logical Media Converter plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka konwertera mediów ZINF obsługująca dźwięk Ogg/Vorbis
+Summary(pl.UTF-8):	Wtyczka konwertera mediów ZINF obsługująca dźwięk Ogg/Vorbis
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -82,7 +82,7 @@ dźwięk Ogg/Vorbis. Pakiet zawiera dodatkowo wtyczkę formatu metadanych
 
 %package mdf-mbcd
 Summary:	MusicBrainz MetaData Format plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka formatu metadanych ZINF obsługująca metadane MusicBrainz
+Summary(pl.UTF-8):	Wtyczka formatu metadanych ZINF obsługująca metadane MusicBrainz
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -95,7 +95,7 @@ MusicBrainz.
 
 %package pmo-alsa
 Summary:	ALSA sound Physical Media Output plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka wyjścia mediów ZINF obsługująca wyjście dźwięku ALSA
+Summary(pl.UTF-8):	Wtyczka wyjścia mediów ZINF obsługująca wyjście dźwięku ALSA
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -108,7 +108,7 @@ wyjście dźwięku ALSA.
 
 %package pmo-arts
 Summary:	aRts sound Physical Media Output plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka wyjścia mediów ZINF obsługująca wyjście dźwięku aRts
+Summary(pl.UTF-8):	Wtyczka wyjścia mediów ZINF obsługująca wyjście dźwięku aRts
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -121,7 +121,7 @@ wyjście dźwięku aRts.
 
 %package pmo-esound
 Summary:	EsounD sound Physical Media Output plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka wyjścia mediów ZINF obsługująca wyjście dźwięku EsounD
+Summary(pl.UTF-8):	Wtyczka wyjścia mediów ZINF obsługująca wyjście dźwięku EsounD
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -134,7 +134,7 @@ wyjście dźwięku EsounD.
 
 %package ui-corba
 Summary:	CORBA User Interface plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka interfejsu ZINF obsługująca interfejs CORBA
+Summary(pl.UTF-8):	Wtyczka interfejsu ZINF obsługująca interfejs CORBA
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -147,7 +147,7 @@ interfejs CORBA.
 
 %package ui-gtk
 Summary:	GTK+-based User Interface plugins for ZINF
-Summary(pl.UTF-8):   Wtyczki interfejsu ZINF oparte na GTK+
+Summary(pl.UTF-8):	Wtyczki interfejsu ZINF oparte na GTK+
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -163,7 +163,7 @@ formatu motywów (Theme Format) konwertujące motywy Kjofola i Winampa.
 
 %package ui-xosd
 Summary:	XOSD User Interface plugin for ZINF
-Summary(pl.UTF-8):   Wtyczka interfejsu ZINF oparta na XOSD
+Summary(pl.UTF-8):	Wtyczka interfejsu ZINF oparta na XOSD
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
