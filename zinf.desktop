@@ -2,10 +2,9 @@
 Name=Zinf
 Comment=Zinf audio player
 Comment[pl]=Odtwarzacz dźwięku Zinf
-Icon=zinf.png
+Icon=zinf
 Exec=zinf -ui zinf.ui
 Terminal=false
 Type=Application
-Encoding=UTF-8
 Categories=Audio;Player;
 # vi: encoding=utf-8
