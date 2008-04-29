@@ -23,8 +23,7 @@ BuildRequires:	ORBit-devel >= 0.5.0
 %{?with_arts:BuildRequires:	artsc-devel}
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	boost-devel >= 1.31.0
-BuildRequires:	boost-filesystem-devel >= 1.31.0
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	esound-devel >= 0.2.12
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.13.1
