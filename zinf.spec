@@ -26,7 +26,7 @@ BuildRequires:	automake
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	esound-devel >= 0.2.12
 BuildRequires:	gdbm-devel
-BuildRequires:	gettext-devel >= 0.13.1
+BuildRequires:	gettext-tools >= 0.13.1
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	id3lib-devel
 BuildRequires:	libmusicbrainz-devel >= 2.0.1
